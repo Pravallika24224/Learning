@@ -131,4 +131,56 @@ function currentTime() {
   setTimeout(function(){ currentTime() }, 1000);
   console.log(time)
 }
-currentTime()
+// currentTime()
+
+// sum 0-100
+let sumOfNumbers = 0
+for(let i = 0; i<=100; i++) {
+  sumOfNumbers = sumOfNumbers+i
+}
+console.log(sumOfNumbers);
+
+// sum of squares of numbers
+function squares(n) {
+  return n * n
+}
+function sumOfSquares(a, b) {
+  let val1 = squares(a)
+  let val2 = squares(b)
+  return val1 + val2
+}
+console.log(sumOfSquares(2, 3))
+// using callbacks
+function sumOfSometing(a, b, fn) {
+  let val1 = fn(a)
+  let val2 = fn(b) 
+  return val1 + val2
+}
+console.log(sumOfSometing(2, 3, squares))
+
+// Async functions
+
+function findSumTillN(n) {
+  let ans = 0
+  for(let i = 0; i< n; i++)  {
+    ans += i
+  }
+  return ans
+}
+function findSumTill100() {
+  console.log(findSumTillN(100))
+}
+setTimeout(findSumTill100, 1000)
+
+// How to make a function wait for some time without calling setTimout
+// ans: keep callstack busy with another function
+
+function syncSleep() {
+  let a =1
+  for(let i = 0; i<1000000000; i++){
+    a++
+  }
+}
+console.log("hello world")
+syncSleep()
+findSumTill100()
